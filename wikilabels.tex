@@ -1,0 +1,36 @@
+% Data flow diagram
+% Template adapted from http://www.texample.net/tikz/examples/data-flow-diagram/ by David Fokkema
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
+% Custom, should be provided in the same directory.
+\usepackage{datastore}
+
+\begin{document}
+\begin{tikzpicture}[
+  font=\sffamily,
+  every matrix/.style={ampersand replacement=\&,column sep=2cm,row sep=2cm},
+  interface/.style={draw,thick,regular polygon,regular polygon sides=4,inner sep=0},
+  process/.style={draw,thick,rounded corners,inner sep=.3 cm},
+  datastore/.style={draw,thick,shape=datastore,inner sep=.3cm},
+  to/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize},
+  every node/.style={align=center}]
+
+  % Position the nodes using a matrix layout
+  \matrix{
+    \node[interface] (researcher) {Researcher}; \\
+    \node[datastore] (experiments) {Experiments}; \\
+    \node[process] (wikilabels) {Wiki labels \\ UI};
+      \& \node[interface] (keyer) {Volunteer \\ labeler}; \\
+    \node[datastore] (results) {Results}; \\
+  };
+
+  % Draw the arrows between the nodes and label them.
+  \draw[to] (researcher) -- node[midway,left] {questions \\ revision curation} (experiments);
+  \draw[to] (wikilabels) to[bend left=25] node[midway,above] {cases} (keyer);
+  \draw[to] (keyer) to[bend left=25] node[midway,below] {responses} (wikilabels);
+  \draw[to] (experiments) -- node[midway,right] {} (wikilabels);
+  \draw[to] (wikilabels) -- node[midway,left] {hand-coded answers} (results);
+\end{tikzpicture}
+\end{document}
