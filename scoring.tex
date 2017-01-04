@@ -1,0 +1,39 @@
+% Data flow diagram
+% Template adapted from http://www.texample.net/tikz/examples/data-flow-diagram/ by David Fokkema
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
+% Custom, should be provided in the same directory.
+\usepackage{datastore}
+
+\begin{document}
+\begin{tikzpicture}[
+  font=\sffamily,
+  every matrix/.style={ampersand replacement=\&,column sep=2cm,row sep=2cm},
+  interface/.style={draw,thick,regular polygon,regular polygon sides=4,inner sep=0},
+  process/.style={draw,thick,rounded corners,inner sep=.3 cm},
+  datastore/.style={draw,thick,shape=datastore,inner sep=.3cm},
+  to/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize},
+  every node/.style={align=center}]
+
+  % Position the nodes using a matrix layout
+  \matrix{
+        \& \node[interface] (consumer) {Consumer}; \\
+      \node[datastore] (cache) {Score cache};
+        \& \node[process] (api) {ORES API}; \\
+        \& \node[process] (celery) {Task queue}; \\
+      \node[datastore] (model) {Model};
+        \& \node[process] (score) {Calculate score}; \\
+        \& \node[interface] (mediawiki) {MediaWiki \\ API}; \\
+  };
+
+  % Draw the arrows between the nodes and label them.
+  \draw[to] (api) -- (consumer);
+  \draw[to] (cache) --  node[midway, above] {cached result} (api);
+  \draw[to] (celery) -- node[midway, left] {response} (api);
+  \draw[to] (score) -- node[midway, left] {score} (celery);
+  \draw[to] (model) -- (score);
+  \draw[to] (mediawiki) -- node[midway, left] {revision content \\ revision metadata \\ recent changes} (score);
+\end{tikzpicture}
+\end{document}
