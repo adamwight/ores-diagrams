@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="776" version="1.1" width="1186" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="312" stroke="#ffffff" stroke-width="1" width="112" x="14" y="14"/>
+<rect fill="none" height="312" stroke="#000000" stroke-width="1" width="112" x="14" y="14"/>
+<text font-family="Dialog" font-size="12" x="50" y="194">
+Editor</text>
+<ellipse cx="68" cy="143" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="68" cy="143" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="68" x2="68" y1="151" y2="166"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="58" x2="78" y1="156" y2="156"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="68" x2="63" y1="166" y2="181"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="68" x2="73" y1="166" y2="181"/>
+<text font-family="Dialog" font-size="12" x="51" y="90">
+Consumer</text>
+<ellipse cx="66" cy="39" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="66" cy="39" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="66" x2="66" y1="47" y2="62"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="56" x2="76" y1="52" y2="52"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="66" x2="61" y1="62" y2="77"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="66" x2="71" y1="62" y2="77"/>
+<ellipse cx="395" cy="55" fill="#000000" rx="117.0" ry="33.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="395" cy="55" fill="#ffffff" rx="116.0" ry="32.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="290" y="56">
+Get revision damaging probability</text>
+<text font-family="Dialog" font-size="12" x="610" y="194">
+ORES</text>
+<ellipse cx="626" cy="143" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="626" cy="143" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="626" x2="626" y1="151" y2="166"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="616" x2="636" y1="156" y2="156"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="626" x2="621" y1="166" y2="181"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="626" x2="631" y1="166" y2="181"/>
+<ellipse cx="402" cy="212" fill="#000000" rx="140.0" ry="38.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="402" cy="212" fill="#ffffff" rx="139.0" ry="37.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="273" y="213">
+Get wp10-esque article quality prediction</text>
+<ellipse cx="382" cy="284" fill="#000000" rx="64.0" ry="22.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="382" cy="284" fill="#ffffff" rx="63.0" ry="21.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="332" y="285">
+Hand key labels</text>
+<text font-family="Dialog" font-size="12" x="192" y="442">
+Experimenter</text>
+<ellipse cx="233" cy="391" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="233" cy="391" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="233" x2="233" y1="399" y2="414"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="223" x2="243" y1="404" y2="404"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="233" x2="228" y1="414" y2="429"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="233" x2="238" y1="414" y2="429"/>
+<ellipse cx="600" cy="559" fill="#000000" rx="154.0" ry="41.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="600" cy="559" fill="#ffffff" rx="153.0" ry="40.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="457" y="560">
+Choose training and cross-validation samples</text>
+<ellipse cx="640" cy="416" fill="#000000" rx="162.0" ry="42.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="640" cy="416" fill="#ffffff" rx="161.0" ry="41.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="489" y="417">
+Design ML model, features, output classification</text>
+<ellipse cx="926" cy="301" fill="#000000" rx="104.0" ry="31.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="926" cy="301" fill="#ffffff" rx="103.0" ry="30.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="844" y="302">
+Measure revision features</text>
+<polyline fill="none" points="856,278 631,204" stroke="#333399" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="839" y="264">
+1</text>
+<text font-family="Dialog" font-size="12" x="650" y="202">
+1</text>
+<ellipse cx="601" cy="666" fill="#000000" rx="51.0" ry="20.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="601" cy="666" fill="#ffffff" rx="50.0" ry="19.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="564" y="667">
+Train model</text>
+<polyline fill="none" points="572,649 238,452" stroke="#333399" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="559" y="630">
+1</text>
+<text font-family="Dialog" font-size="12" x="261" y="454">
+1</text>
+<polyline fill="none" points="76,52 278,53" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="87" y="47">
+1</text>
+<text font-family="Dialog" font-size="12" x="260" y="48">
+1</text>
+<ellipse cx="866" cy="112" fill="#000000" rx="84.0" ry="26.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="866" cy="112" fill="#ffffff" rx="83.0" ry="25.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="793" y="113">
+Run models on revision</text>
+<polyline fill="none" points="635,143 788,122" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="646" y="133">
+1</text>
+<text font-family="Dialog" font-size="12" x="766" y="118">
+1</text>
+<ellipse cx="635" cy="326" fill="#000000" rx="109.0" ry="32.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="635" cy="326" fill="#ffffff" rx="108.0" ry="31.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="538" y="327">
+Access raw model and storage</text>
+<polyline fill="none" points="540,341 242,391" stroke="#333399" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="519" y="336">
+1</text>
+<text font-family="Dialog" font-size="12" x="254" y="380">
+1</text>
+<polyline fill="none" points="633,294 631,204" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="612" y="277">
+1</text>
+<text font-family="Dialog" font-size="12" x="611" y="231">
+1</text>
+<text font-family="Dialog" font-size="12" x="154" y="330">
+Keyer</text>
+<ellipse cx="171" cy="279" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="171" cy="279" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="171" x2="171" y1="287" y2="302"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="161" x2="181" y1="292" y2="292"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="171" x2="166" y1="302" y2="317"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="171" x2="176" y1="302" y2="317"/>
+<polyline fill="none" points="181,292 318,286" stroke="#000000" stroke-width="1"/>
+<ellipse cx="893" cy="210" fill="#000000" rx="55.0" ry="20.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="893" cy="210" fill="#ffffff" rx="54.0" ry="19.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="853" y="211">
+Store scores</text>
+<polyline fill="none" points="636,156 845,199" stroke="#000000" stroke-width="1"/>
+<ellipse cx="538" cy="736" fill="#000000" rx="84.0" ry="26.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="538" cy="736" fill="#ffffff" rx="83.0" ry="25.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="468" y="737">
+Evlauate model health</text>
+<polyline fill="none" points="511,711 238,452" stroke="#333399" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="55" y="298">
+Bot</text>
+<ellipse cx="66" cy="247" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="66" cy="247" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="66" x2="66" y1="255" y2="270"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="56" x2="76" y1="260" y2="260"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="66" x2="61" y1="270" y2="285"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="66" x2="71" y1="270" y2="285"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="14" x2="126" y1="118" y2="118"/>
+<polyline fill="none" points="71,100 314,182" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="238,452 496,528" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="243,404 479,411" stroke="#000000" stroke-width="1"/>
+<ellipse cx="391" cy="134" fill="#000000" rx="113.0" ry="32.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="391" cy="134" fill="#ffffff" rx="112.0" ry="31.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="291" y="135">
+Get revision reverted probability</text>
+<polyline fill="none" points="71,100 285,122" stroke="#000000" stroke-width="1"/>
+<ellipse cx="916" cy="530" fill="#000000" rx="54.0" ry="20.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="916" cy="530" fill="#ffffff" rx="53.0" ry="19.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="877" y="531">
+View metrics</text>
+<polyline fill="none" points="238,452 864,524" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="1122" y="522">
+Devops</text>
+<ellipse cx="1145" cy="471" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1145" cy="471" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1145" x2="1145" y1="479" y2="494"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1135" x2="1155" y1="484" y2="484"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1145" x2="1140" y1="494" y2="509"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1145" x2="1150" y1="494" y2="509"/>
+<ellipse cx="919" cy="686" fill="#000000" rx="73.0" ry="24.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="919" cy="686" fill="#ffffff" rx="72.0" ry="23.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="860" y="687">
+Scale worker pools</text>
+<polyline fill="none" points="950,664 1140,532" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="969,530 1140,532" stroke="#333399" stroke-width="1"/>
+<ellipse cx="940" cy="744" fill="#000000" rx="46.0" ry="18.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="940" cy="744" fill="#ffffff" rx="45.0" ry="17.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="910" y="745">
+Configure</text>
+<polyline fill="none" points="955,727 1140,532" stroke="#333399" stroke-width="1"/>
+<polyline fill="none" points="644,655 1140,532" stroke="#333399" stroke-width="1"/>
+</svg>
