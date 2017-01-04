@@ -1,0 +1,47 @@
+% Data flow diagram
+% Template adapted from http://www.texample.net/tikz/examples/data-flow-diagram/ by David Fokkema
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
+% Custom, should be provided in the same directory.
+\usepackage{datastore}
+
+\begin{document}
+\begin{tikzpicture}[
+  font=\sffamily,
+  every matrix/.style={ampersand replacement=\&,column sep=2cm,row sep=2cm},
+  interface/.style={draw,thick,regular polygon,regular polygon sides=4,inner sep=0},
+  process/.style={draw,thick,rounded corners,inner sep=.3 cm},
+  datastore/.style={draw,thick,shape=datastore,inner sep=.3cm},
+  to/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize},
+  every node/.style={align=center}]
+
+  % Position the nodes using a matrix layout
+  \matrix{
+      \node[interface] (keyer) {Volunteer \\ labeler};
+      \& \node[interface] (researcher) {Researcher};
+        \& \node[process] (evaluate) {Evaluate health}; \\
+      \node[process] (wikilabels) {Wiki labels}; \\
+	% TODO: These could be split into two data paths.
+      \& \node[datastore] (test) {Training and test set};
+	    \& \node[datastore] (results) {Test results}; \\
+      \& \node[process] (train) {Build model};
+        \& \node[process] (run) {Run model \\ on test set}; \\
+      \& \node[interface] (models) {Model}; \\
+  };
+
+  % Draw the arrows between the nodes and label them.
+  \draw[to] (evaluate) -- node[midway, above] {AUC} (researcher);
+  \draw[to] (researcher) -- node[midway,right] {choice of data} (wikilabels);
+  \draw[to] (researcher) -- node[midway,right] {choice of data} (test);
+  \draw[to] (wikilabels) to[bend left=25] node[midway,left] {cases} (keyer);
+  \draw[to] (keyer) to[bend left=25] node[midway] {classification} (wikilabels);
+  \draw[to] (wikilabels) -- node[midway,left] {keyed test data} (test);
+  \draw[to] (results) -- node[midway,left] {feedback} (evaluate);
+  \draw[to] (test) -- (train);
+  \draw[to] (train) -- (models);
+  \draw[to] (models) -- (run);
+  \draw[to] (run) -- node[midway,left] {test scores} (results);
+\end{tikzpicture}
+\end{document}
