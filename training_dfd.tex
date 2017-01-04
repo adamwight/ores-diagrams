@@ -8,6 +8,9 @@
 \usepackage{datastore}
 
 \begin{document}
+
+% TODO: \title{ORES machine learning data flow} \maketitle
+
 \begin{tikzpicture}[
   font=\sffamily,
   every matrix/.style={ampersand replacement=\&,column sep=2cm,row sep=2cm},
@@ -20,15 +23,15 @@
   % Position the nodes using a matrix layout
   \matrix{
       \node[interface] (keyer) {Volunteer \\ labeler};
-      \& \node[interface] (researcher) {Researcher};
-        \& \node[process] (evaluate) {Evaluate health}; \\
-      \node[process] (wikilabels) {Wiki labels}; \\
-	% TODO: These could be split into two data paths.
-      \& \node[datastore] (test) {Training and test set};
-	    \& \node[datastore] (results) {Test results}; \\
-      \& \node[process] (train) {Build model};
+        \& \node[interface] (researcher) {Researcher};
+          \& \node[process] (evaluate) {Evaluate health}; \\
+      \node[process] (wikilabels) {Wiki labels};
+	      \& \& \node[datastore] (results) {Test results}; \\
+      \node[datastore] (training) {Training set};
+        \& \node[datastore] (test) {Test set};
         \& \node[process] (run) {Run model \\ on test set}; \\
-      \& \node[interface] (models) {Model}; \\
+      \node[process] (train) {Build model};
+          \& \& \node[interface, very thick] (models) {Model}; \\
   };
 
   % Draw the arrows between the nodes and label them.
@@ -38,10 +41,12 @@
   \draw[to] (wikilabels) to[bend left=25] node[midway,left] {cases} (keyer);
   \draw[to] (keyer) to[bend left=25] node[midway] {classification} (wikilabels);
   \draw[to] (wikilabels) -- node[midway,left] {keyed test data} (test);
+  \draw[to] (wikilabels) -- (training);
   \draw[to] (results) -- node[midway,left] {feedback} (evaluate);
-  \draw[to] (test) -- (train);
+  \draw[to] (training) -- (train);
   \draw[to] (train) -- (models);
   \draw[to] (models) -- (run);
+  \draw[to] (test) -- (run);
   \draw[to] (run) -- node[midway,left] {test scores} (results);
 \end{tikzpicture}
 \end{document}
