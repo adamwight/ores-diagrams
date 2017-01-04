@@ -25,6 +25,7 @@
         \& \node[process] (celery) {Task queue}; \\
       \node[datastore] (model) {Model};
         \& \node[process] (score) {Calculate score}; \\
+        \& \node[process] (extract) {Extract features}; \\
         \& \node[interface] (mediawiki) {MediaWiki \\ API}; \\
   };
 
@@ -35,6 +36,7 @@
   \draw[to] (score) -- node[midway, left] {score} (celery);
   \draw[to] (score) -- (cache);
   \draw[to] (model) -- (score);
-  \draw[to] (mediawiki) -- node[midway, left] {revision content \\ revision metadata \\ recent changes} (score);
+  \draw[to] (extract) -- (score);
+  \draw[to] (mediawiki) -- node[midway, left] {revision content \\ revision metadata \\ recent changes} (extract);
 \end{tikzpicture}
 \end{document}
