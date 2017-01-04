@@ -26,7 +26,8 @@
         \& \node[interface] (researcher) {Researcher};
           \& \node[process] (evaluate) {Evaluate health}; \\
       \node[process] (wikilabels) {Wiki labels};
-	      \& \& \node[datastore] (results) {Test results}; \\
+	      \& \node[datastore] (experiments) {Experiments};
+	         \& \node[datastore] (results) {Test results}; \\
       \node[datastore] (training) {Training set};
         \& \node[datastore] (test) {Test set};
         \& \node[process] (run) {Run model \\ on test set}; \\
@@ -36,8 +37,8 @@
 
   % Draw the arrows between the nodes and label them.
   \draw[to] (evaluate) -- node[midway, above] {AUC} (researcher);
-  \draw[to] (researcher) -- node[midway,right] {choice of data} (wikilabels);
-  \draw[to] (researcher) -- node[midway,right] {choice of data} (test);
+  \draw[to] (experiments) -- (wikilabels);
+  \draw[to] (researcher) -- node[midway,right] {choice of data} (experiments);
   \draw[to] (wikilabels) to[bend left=25] node[midway,left] {cases} (keyer);
   \draw[to] (keyer) to[bend left=25] node[midway] {classification} (wikilabels);
   \draw[to] (wikilabels) -- node[midway,left] {keyed test data} (test);

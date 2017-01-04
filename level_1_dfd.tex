@@ -32,7 +32,7 @@
       \& \node[interface] (consumer) {ORES consumer}; \\
   };
 
-  % Draw the arrows between the nodes and label them.
+  % Draw and label arrows between nodes.
   \draw[to] (recentchanges) -- node[midway,left] {new revisions} (ores);
   \draw[to] (researcher) -- node[midway,above] {experiments} (wikilabels);
   \draw[to] (volunteer) -- node[midway,above] {hand coding} (wikilabels);
