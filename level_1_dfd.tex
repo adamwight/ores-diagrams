@@ -21,7 +21,7 @@
   \matrix{
     \node[interface] (researcher) {Researcher};
       \& \node[process] (wikilabels) {Wiki labels};
-        \& \node[interface] (volunteer) {Volunteer \\ keyer}; \\
+        \& \node[interface] (labeler) {Labeler}; \\
       \& \node[process] (train) {Train AI}; \\
     \node[interface] (recentchanges) {Recent changes \\ feed};
       \& \node[datastore] (models) {Models}; \\
@@ -38,7 +38,7 @@
   % Draw and label arrows between nodes.
   \draw[to] (recentchanges) -- node[midway,left] {new revisions} (ores);
   \draw[to] (researcher) -- node[midway,above] {experiments} (wikilabels);
-  \draw[to] (volunteer) -- node[midway,above] {hand coding} (wikilabels);
+  \draw[to] (labeler) -- node[midway,above] {hand coding} (wikilabels);
   \draw[to] (wikilabels) -- node[midway,left] {test and \\ training sets} (train);
   \draw[to] (train) -- (models);
   \draw[to] (models) -- (ores);

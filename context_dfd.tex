@@ -22,7 +22,7 @@
       \& \node[interface] (mwapi) {MediaWiki API}; \\
     \node[interface] (researcher) {Researcher};
       \& \node[process] (ores) {ORES};
-        \& \node[interface] (volunteer) {Volunteer \\ keyer}; \\
+        \& \node[interface] (labeler) {Labeler}; \\
       \& \node[interface] (consumer) {ORES consumer}; \\
   };
 
@@ -34,6 +34,6 @@
       node[midway,right] {revision content \\ revision metadata} (ores);
   \draw[to] (ores) -- node[midway,right] {revision scores} (consumer);
   \draw[to] (researcher) -- node[midway,above] {parameters \\ AI training} (ores);
-  \draw[to] (volunteer) -- node[midway,above] {judgements} (ores);
+  \draw[to] (labeler) -- node[midway,above] {judgements} (ores);
 \end{tikzpicture}
 \end{document}
