@@ -28,6 +28,10 @@
       \& \node[datastore] (results) {Training and test sets}; \\
   };
 
+  \node[below=1cm, align=flush center] (title) at (results)
+  {\Large Wiki labels \\ \normalsize data flow diagram \\
+  };
+
   % Draw the arrows between the nodes and label them.
   \draw[to] (researcher) -- node[midway,left] {questions \\ revision curation \\ wikis} (design);
   \draw[to] (design) -- (experiments);

@@ -32,8 +32,12 @@
         \& \node[process] (train) {Build model}; \\
         \& \node[datastore] (models) {Model}; \\
 	  \node[datastore] (results) {Test results};
-          \& \& \node[process] (run) {Run model \\ on test set}; \\
+        \& \node (hidden) {};
+		  \& \node[process] (run) {Run model \\ on test set}; \\
   };
+
+  \node [below=1cm, align=flush center] at (hidden)
+  {\Large ORES: AI Training \\ \normalsize data flow diagram};
 
   % Draw the arrows between the nodes and label them.
   \draw[to] (evaluate) to[bend left=50] node[midway, left] {AUC} (researcher);

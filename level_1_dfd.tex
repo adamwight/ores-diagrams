@@ -10,12 +10,12 @@
 \begin{document}
 \begin{tikzpicture}[
   font=\sffamily,
-  every matrix/.style={ampersand replacement=\&,column sep=2cm,row sep=2cm},
+  every matrix/.style={ampersand replacement=\&,column sep=1cm,row sep=1cm},
   interface/.style={draw,thick,regular polygon,regular polygon sides=4,inner sep=0},
   process/.style={draw,thick,rounded corners,inner sep=.3 cm},
   datastore/.style={draw,thick,shape=datastore,inner sep=.3cm},
   to/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize},
-  every node/.style={align=center}]
+  every node/.style={scale=0.9,align=center}]
 
   % Position the nodes using a matrix layout
   \matrix{
@@ -31,6 +31,9 @@
       \& \node[process] (oresapi) {ORES API}; \\
       \& \node[interface] (consumer) {ORES consumer}; \\
   };
+
+  \node [below=2cm, align=flush center] at (consumer)
+  {\Large ORES: Overview, level 1 \\ \normalsize data flow diagram};
 
   % Draw and label arrows between nodes.
   \draw[to] (recentchanges) -- node[midway,left] {new revisions} (ores);

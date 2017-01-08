@@ -19,21 +19,21 @@
 
   % Position the nodes using a matrix layout
   \matrix{
-      \& \node[interface] (mwapi) {MediaWiki API}; \\
-    \node[interface] (researcher) {Researcher};
-      \& \node[process] (ores) {ORES};
-        \& \node[interface] (volunteer) {Volunteer \\ keyer}; \\
-      \& \node[interface] (consumer) {ORES consumer}; \\
+    \node[process] (scoring) {ORES scoring}; \\
+    \node[process] (api) {ORES API};
+      \& \node[interface] (statsd) {statsd}; \\
+    \node[process] (train) {Train AI}; \\
+    \node[process] (wikilabels) {Wiki labels};
+      \& \node (hidden) {}; \\
   };
 
-  \node [below=3cm, align=flush center] at (consumer)
-  {\Large ORES: Context, level 0 \\ \normalsize data flow diagram};
+  \node [below=2cm, align=flush center] at (hidden)
+  {\Large ORES: Metrics \\ \normalsize data flow diagram};
 
-  % Draw the arrows between the nodes and label them.
-  \draw[to] (mwapi) -- node[midway,left] {new revision events}
-      node[midway,right] {revision content \\ revision metadata} (ores);
-  \draw[to] (ores) -- node[midway,right] {revision scores} (consumer);
-  \draw[to] (researcher) -- node[midway,above] {parameters \\ AI training} (ores);
-  \draw[to] (volunteer) -- node[midway,above] {judgements} (ores);
+  % Draw and label arrows between nodes.
+  \draw[to] (scoring) -- node[midway,right] {metrics} (statsd);
+  \draw[to] (api) -- node[midway,above] {} (statsd);
+  \draw[to] (train) -- node[midway,above] {} (statsd);
+  \draw[to] (wikilabels) -- node[midway,above] {} (statsd);
 \end{tikzpicture}
 \end{document}

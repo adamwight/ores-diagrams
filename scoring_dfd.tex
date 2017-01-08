@@ -30,6 +30,9 @@
         \& \node[process] (extract) {Extract features}; \\
   };
 
+  \node [below=1cm, align=flush center] at (extract)
+  {\Large ORES: Scoring \\ \normalsize data flow diagram};
+
   % Draw the arrows between the nodes and label them.
   \draw[to] (api) -- (consumer);
   \draw[to] (cache) --  node[midway, above] {cached result} (api);
