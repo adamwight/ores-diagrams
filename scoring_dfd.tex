@@ -39,7 +39,7 @@
   \draw[to] (score) -- node[midway, left] {score} (celery);
   \draw[to] (score) -- (cache);
   \draw[to] (model) -- (score);
-  \draw[to] (extract) -- (score);
+  \draw[to] (extract) -- node[midway, left] {features} (score);
   \draw[to] (mediawiki) -- node[midway, right] {recent changes} (precache);
   \draw[to] (mediawiki) -- node[midway, right] {revision content \\ revision metadata} (extract);
 \end{tikzpicture}

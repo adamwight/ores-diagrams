@@ -22,25 +22,26 @@
 
   % Position the nodes using a matrix layout
   \matrix{
-      \node[interface] (keyer) {Volunteer \\ labeler};
-        \& \node[interface] (researcher) {Researcher};
-          \& \node[process] (evaluate) {Evaluate health}; \\
-      \node[process] (wikilabels) {Wiki labels};
-	      \& \node[datastore] (experiments) {Experiments};
-	         \& \node[datastore] (results) {Test results}; \\
-      \node[datastore] (training) {Training set};
-        \& \node[datastore] (test) {Test set};
-        \& \node[process] (run) {Run model \\ on test set}; \\
-      \node[process] (train) {Build model};
-          \& \& \node[interface] (models) {Model}; \\
+      \node[interface] (researcher) {Researcher};
+        \& \node[interface] (keyer) {Labeler}; \\
+	  \node[datastore] (experiments) {Experiments};
+        \& \node[process] (wikilabels) {Wiki labels}; \\
+	  \node[process] (evaluate) {Evaluate health};
+        \& \node[datastore] (training) {Training set};
+          \& \node[datastore] (test) {Test set}; \\
+        \& \node[process] (train) {Build model}; \\
+        \& \node[datastore] (models) {Model}; \\
+	  \node[datastore] (results) {Test results};
+          \& \& \node[process] (run) {Run model \\ on test set}; \\
   };
 
   % Draw the arrows between the nodes and label them.
-  \draw[to] (evaluate) -- node[midway, above] {AUC} (researcher);
+  \draw[to] (evaluate) to[bend left=50] node[midway, left] {AUC} (researcher);
   \draw[to] (experiments) -- (wikilabels);
   \draw[to] (researcher) -- node[midway,right] {choice of data} (experiments);
+  \draw[to] (researcher) -- node[midway,left] {choice of model \\ and parameters} (train);
   \draw[to] (wikilabels) to[bend left=25] node[midway,left] {cases} (keyer);
-  \draw[to] (keyer) to[bend left=25] node[midway] {classification} (wikilabels);
+  \draw[to] (keyer) to[bend left=25] node[midway, right] {classification} (wikilabels);
   \draw[to] (wikilabels) -- node[midway,left] {keyed test data} (test);
   \draw[to] (wikilabels) -- (training);
   \draw[to] (results) -- node[midway,left] {feedback} (evaluate);
@@ -48,6 +49,6 @@
   \draw[to] (train) -- (models);
   \draw[to] (models) -- (run);
   \draw[to] (test) -- (run);
-  \draw[to] (run) -- node[midway,left] {test scores} (results);
+  \draw[to] (run) -- node[midway,below] {test scores} (results);
 \end{tikzpicture}
 \end{document}
