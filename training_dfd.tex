@@ -40,7 +40,7 @@
   {\Large ORES: AI Training \\ \normalsize data flow diagram};
 
   % Draw the arrows between the nodes and label them.
-  \draw[to] (evaluate) to[bend left=50] node[midway, left] {AUC} (researcher);
+  \draw[to] (evaluate) to[bend left=50] node[midway, left] {ROC AUC} (researcher);
   \draw[to] (experiments) -- (wikilabels);
   \draw[to] (researcher) -- node[midway,right] {choice of data} (experiments);
   \draw[to] (researcher) -- node[midway,left] {choice of model \\ and parameters} (train);
