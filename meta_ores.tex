@@ -1,17 +1,14 @@
-% Entities and their ownership.
+% Meta-ORES entities and their relationships.
 \documentclass{article}
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes}
 
-% Custom, should be provided in the same directory as "datastore.sty".
-\usepackage{datastore}
-
 \begin{document}
 \begin{tikzpicture}[
   font=\sffamily,
-  every matrix/.style={ampersand replacement=\&,column sep=2cm,row sep=2cm},
-  entity/.style={draw,thick,rounded corners,inner sep=.3 cm},
-  owned/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize},
+  every matrix/.style={ampersand replacement=\&, column sep=2cm, row sep=2cm},
+  entity/.style={draw, ellipse, thick, inner sep=1em},
+  owned/.style={->, >=stealth', shorten >=1pt, semithick, font=\sffamily\footnotesize},
   every node/.style={align=center}]
 
   % TODO: dashed boxes for regions: wiki entity, judgement, discussion
