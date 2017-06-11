@@ -1,26 +1,31 @@
 % Meta-ORES entities and their relationships.
 \documentclass{article}
 \usepackage{tikz}
+\usepackage[landscape]{geometry}
 \usetikzlibrary{arrows,shapes}
+
+% Disable page number for better SVG.
+\pagenumbering{gobble}
 
 \begin{document}
 \begin{tikzpicture}[
   font=\sffamily,
   every matrix/.style={ampersand replacement=\&, column sep=2cm, row sep=2cm},
   entity/.style={draw, ellipse, thick, inner sep=1em},
-  owned/.style={->, >=stealth', shorten >=1pt, semithick, font=\sffamily\footnotesize},
+  arrow/.style={->, >=stealth', shorten >=1pt, semithick, font=\sffamily\footnotesize},
   every node/.style={align=center}]
 
   % TODO: dashed boxes for regions: wiki entity, judgment, discussion
 
   % Position the nodes using a matrix layout
   \matrix{
-        \& \node[entity] (wiki1) {Wiki entity};
-			\& \node[entity] (wiki2) {Wiki entity}; \\
+      \node[entity] (wiki1) {Wiki article};
+		  \& \& \node[entity] (wiki2) {Wiki revision}; \\
 	  % FIXME: Vary node styles?
-      \node[entity] (comment1) {Judgment};
-		\& \node[entity] (comment2) {Judgment};
-			\& \node[entity] (comment3) {Judgment}; \\
+      \node[entity] (comment1) {ORES \\ article quality};
+		\& \node[entity] (comment2) {Meta-ORES \\ article judgment};
+		  \& \node[entity] (comment3) {ORES \\ revision score};
+			\& \node[entity] (comment4) {Meta-ORES \\ revision judgment}; \\
 		  \& \node[entity] (reply1) {Reply}; \\
 		  \& \node[entity] (reply2a) {Reply};
 		  \& \node[entity] (reply2b) {Reply}; \\
@@ -30,11 +35,14 @@
   {\Large Meta-ORES \\ \normalsize object graph};
 
   % Draw the arrows between the nodes and label them.
-  \draw[owned] (comment1) -- (wiki1);
-  \draw[owned] (comment2) -- (wiki1);
-  \draw[owned] (comment3) -- (wiki2);
-  \draw[owned] (reply1) -- (comment2);
-  \draw[owned] (reply2a) -- (reply1);
-  \draw[owned] (reply2b) -- (reply1);
+  \draw[arrow] (comment1) -- (wiki1);
+  \draw[arrow] (comment2) -- (wiki1);
+  \draw[arrow] (comment2) -- node[midway, below] {refutes} (comment1);
+  \draw[arrow] (comment3) -- (wiki2);
+  \draw[arrow] (comment4) -- (wiki2);
+  \draw[arrow] (comment4) -- node[midway, below] {supports} (comment3);
+  \draw[arrow] (reply1) -- node[midway, right] {discusses} (comment2);
+  \draw[arrow] (reply2a) -- (reply1);
+  \draw[arrow] (reply2b) -- (reply1);
 \end{tikzpicture}
 \end{document}
