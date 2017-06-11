@@ -27,3 +27,7 @@ Building
 Diagrams are either written in LaTeX or using ArgoUML.  To compile the .tex into .pdf,
 
   latexmk -pdf
+
+To build a TeX file to SVG,
+
+  latexmk -dvi FILENAME.tex && dvisvgm --no-fonts FILENAME.dvi
