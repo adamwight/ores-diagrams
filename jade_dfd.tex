@@ -19,26 +19,27 @@
 
   % Position the nodes using a matrix layout
   \matrix{
-      \& \node[interface] (human) {Reviewer}; \\
-      \& \node[process] (metaores) {Meta-ORES UI}; \\
-    \node[datastore] (scores) {ORES scores};
-      \& \node[datastore] (judgments) {Meta-ORES judgments};
-        \& \node[interface] (researcher) {Researcher}; \\
-      \& \node[process] (oresapi) {ORES client};
-        \& \node[process] (wikilabels) {Wiki labels}; \\
+      \& \node[interface] (human) {Reviewer \\ Labeler}; \\
+    \node[datastore] (cases) {Cases to label};
+      \& \node[process] (tools) {Reviewer tools \\ Wiki labels}; \\
+    \node[interface] (researcher) {Researcher \\ ORES Training};
+      \& \node[datastore] (judgments) {JADE judgments};
+        \& \& \node[datastore] (scores) {ORES scores}; \\
+      \& \node[process] (oresapi) {ORES + JADE API}; \\
       \& \node[interface] (editor) {Editor}; \\
   };
 
   \node [below=2cm, align=flush center] at (editor)
-  {\Large Meta-ORES \\ \normalsize data flow diagram};
+  {\Large JADE \\ \normalsize data flow diagram};
 
   % Draw and label arrows between nodes.
-  \draw[to] (human) -- (metaores);
-  \draw[to] (metaores) -- (judgments);
+  \draw[to] (human) -- node[midway, right] {labels \\ annotations} (tools);
+  \draw[to] (tools) -- node[midway, right] {judgments \\ endorsements \\ curation} (judgments);
   \draw[to] (judgments) -- (oresapi);
   \draw[to] (scores) -- (oresapi);
-  \draw[to] (judgments) -- (wikilabels);
   \draw[to] (judgments) -- (researcher);
-  \draw[to] (oresapi) -- (editor);
+  \draw[to] (researcher) -- node[midway, left] {active learning cases \\ wiki labels campaigns} (cases);
+  \draw[to] (cases) -- node[midway, above] {cases} (tools);
+  \draw[to] (oresapi) -- node[midway, right] {scores and judgments} (editor);
 \end{tikzpicture}
 \end{document}
