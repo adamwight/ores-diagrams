@@ -1,4 +1,4 @@
-% Meta-ORES entities and their relationships.
+% JADE entities and their relationships.
 \documentclass{article}
 \usepackage{tikz}
 \usepackage[landscape]{geometry}
@@ -23,16 +23,16 @@
 		  \& \& \node[entity] (wiki2) {Wiki revision}; \\
 	  % FIXME: Vary node styles?
       \node[entity] (comment1) {ORES \\ article quality};
-		\& \node[entity] (comment2) {Meta-ORES \\ article judgment};
+		\& \node[entity] (comment2) {JADE \\ article judgment};
 		  \& \node[entity] (comment3) {ORES \\ revision score};
-			\& \node[entity] (comment4) {Meta-ORES \\ revision judgment}; \\
+			\& \node[entity] (comment4) {JADE \\ revision judgment}; \\
 		  \& \node[entity] (reply1) {Reply}; \\
 		  \& \node[entity] (reply2a) {Reply};
 		  \& \node[entity] (reply2b) {Reply}; \\
   };
 
   \node [below=1cm, align=flush center] at (reply2a)
-  {\Large Meta-ORES \\ \normalsize object graph};
+  {\Large JADE \\ \normalsize object graph};
 
   % Draw the arrows between the nodes and label them.
   \draw[arrow] (comment1) -- (wiki1);
