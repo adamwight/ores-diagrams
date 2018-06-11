@@ -25,22 +25,20 @@
     \node[datastore] (experiments) {Experiments};
       \& \node[process] (wikilabels) {Wiki labels \\ UI};
         \& \node[interface] (keyer) {Labeler}; \\
-      \& \node[process] (summarize) {Distill results}; \\
-      \& \node[datastore] (results) {Training and test sets}; \\
+      \& \node[process] (labels) {Completed campaigns}; \\
   };
 
-  \node[below=1cm, align=flush center] (title) at (results)
+  \node[below=1cm, align=flush center] (title) at (labels)
   {\Large Wiki labels \\ \normalsize data flow diagram \\
   };
 
   % Draw the arrows between the nodes and label them.
-  \draw[to] (researcher) -- node[midway,left] {questions \\ revision curation \\ wikis} (design);
+  \draw[to] (researcher) -- node[midway,left] {research questions \\ revision curation \\ wikis} (design);
   \draw[to] (design) -- (experiments);
   \draw[to] (mediawiki) -- node[midway,right] {wiki siteinfo} (wikilabels);
   \draw[to] (wikilabels) to[bend left=25] node[midway,above] {cases} (keyer);
-  \draw[to] (keyer) to[bend left=25] node[midway,below] {classifications} (wikilabels);
+  \draw[to] (keyer) to[bend left=25] node[midway,below] {classification labels} (wikilabels);
   \draw[to] (experiments) -- node[midway,right] {} (wikilabels);
-  \draw[to] (wikilabels) -- node[midway,left] {judgements} (summarize);
-  \draw[to] (summarize) -- (results);
+  \draw[to] (wikilabels) -- node[midway, left] {judgements} (labels);
 \end{tikzpicture}
 \end{document}
